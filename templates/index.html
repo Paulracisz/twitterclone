@@ -1,0 +1,13 @@
+<h2>Welcome {{user}}</h2>
+
+<a href="/logout/">Logout </a>
+<br>
+<a href="/signup/">Signup </a>
+<br>
+<a href="/new_tweet/">Make A New Tweet </a>
+<br>
+{%for tweet in tweets%}
+<br>
+<a href="/tweet/{{tweet.id}}">{{tweet.body}}</a>
+<br>
+{%endfor%}

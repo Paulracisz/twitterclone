@@ -1,0 +1,1 @@
+Twitterclone is a copy of twitter using Django technologies to implement some of the functionality of Twitter. It has authentication, server side rendering of components, the ability to make an account, login, make a tweet, follow other accounts, and has a dynamic feed organized chronologically, and filtered by whom the user follows.
