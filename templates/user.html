@@ -1,1 +1,17 @@
-{{user}}
+<h1>{{user}}</h1>
+<h2>{{user}} is following {{user.following.count}} user(s)</h2>
+<br>
+<h2>{{user}} has made {{tweets.count}} tweet(s)</h2>
+<br>
+<a href="/follow/{{user.id}}/">FOLLOW THIS USER</a>
+<br>
+<a href="/unfollow/{{user.id}}/">UNFOLLOW THIS USER</a>
+<br>
+<h1>Tweets</h1>
+{%for tweet in tweets%}
+<br>
+<h2>{{tweet.body}}</h2>
+<br>
+<h2>~{{tweet.author}}</h2>
+<br>
+{% endfor %}

@@ -4,10 +4,16 @@
 <br>
 <a href="/signup/">Signup </a>
 <br>
+<a href="/user/{{user.id}}/">My Profile</a>
+<br>
 <a href="/new_tweet/">Make A New Tweet </a>
+<br>
+<a href="/notification/">My Notifications</a>
 <br>
 {%for tweet in tweets%}
 <br>
-<a href="/tweet/{{tweet.id}}">{{tweet.body}}</a>
+<a href="/tweet/{{tweet.id}}/">{{tweet.body}}</a>
+<br>
+<a href="/user/{{tweet.author.id}}/">{{tweet.author}}</a>
 <br>
 {%endfor%}

@@ -3,5 +3,5 @@ from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
-class MyUser(AbstractUser):
-    display_name = models.CharField(max_length=13, default="")
+class TwitterUser(AbstractUser):
+    following = models.ManyToManyField("self", symmetrical=False)

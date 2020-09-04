@@ -1,0 +1,8 @@
+{%for n in notif%}
+{% if not n.notification_read%}
+{{n}}
+{% endif %}
+
+
+
+{% endfor %}

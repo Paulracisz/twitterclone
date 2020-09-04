@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'twitteruser',
     'twitterclone',
     'tweet',
+    'notification'
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'twitteruser.MyUser'
+AUTH_USER_MODEL = 'twitteruser.TwitterUser'
 
 
 LOGIN_URL = '/login/'
