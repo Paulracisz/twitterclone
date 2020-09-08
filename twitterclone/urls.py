@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from authentication import views as view
-from twitteruser import views as user_views 
+from twitteruser import views as user_views
 from tweet.views import tweet_view, TweetDetailView, UserDetailView, TweetFormView
 from notification import views as notif_v
+from django.shortcuts import HttpResponseRedirect, render, reverse
+
 
 urlpatterns = [
     path('', tweet_view, name='homepage'),
@@ -28,8 +30,8 @@ urlpatterns = [
     path('tweet/<int:tweet_id>/', TweetDetailView.as_view(), name='tweet'),
     path('user/<int:user_id>/', UserDetailView.as_view(), name="user"),
     path('new_tweet/', TweetFormView.as_view(), name="tweet_form"),
-    path('follow/<int:follow_id>/', user_views.following, name="following"),
-    path('unfollow/<int:unfollow_id>/', user_views.unfollowing, name="unfollowing"),
+    path('follow/<int:follow_id>/', user_views.Following.as_view(), name="following"),
+    path('unfollow/<int:unfollow_id>/', user_views.Unfollowing.as_view(), name="unfollowing"),
     path('notification/', notif_v.see_notification, name="notification"),
     path('admin/', admin.site.urls),
 ]
