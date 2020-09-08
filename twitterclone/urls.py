@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from authentication import views as view
 from twitteruser import views as user_views 
-from tweet.views import tweet_view, tweet_details, user_details, tweet_form
+from tweet.views import tweet_view, TweetDetailView, UserDetailView, TweetFormView
 from notification import views as notif_v
 
 urlpatterns = [
@@ -25,9 +25,9 @@ urlpatterns = [
     path('login/', view.login_view, name="login"),
     path('logout/', view.logout_view, name='logoutview'),
     path('signup/', view.signup_view, name='signup'),
-    path('tweet/<int:tweet_id>/', tweet_details, name='tweet'),
-    path('user/<int:user_id>/', user_details, name="user"),
-    path('new_tweet/', tweet_form, name="tweet_form"),
+    path('tweet/<int:tweet_id>/', TweetDetailView.as_view(), name='tweet'),
+    path('user/<int:user_id>/', UserDetailView.as_view(), name="user"),
+    path('new_tweet/', TweetFormView.as_view(), name="tweet_form"),
     path('follow/<int:follow_id>/', user_views.following, name="following"),
     path('unfollow/<int:unfollow_id>/', user_views.unfollowing, name="unfollowing"),
     path('notification/', notif_v.see_notification, name="notification"),
